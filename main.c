@@ -3,6 +3,7 @@
 //
 
 #include "main.h"
+#include "stdio.h"
 void main(){
     printf("UOK HR PROJECT");
 }

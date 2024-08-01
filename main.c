@@ -1,9 +1,34 @@
+#include <stdio.h>
+/*
+int main() {
+//    FILE *file;
+//    file = fopen("nonexistentfile.txt", "r");
 //
-// Created by kavindu on 2024-07-29.
+//    if (file == NULL) {
+//        printf(stderr, "Error: Could not open file\n");
+//        return 1;
+//    }
 //
+//    // Further file operations
+//    fclose(file);
 
-#include "main.h"
-#include "stdio.h"
-void main(){
-    printf("UOK HR PROJECT");
+
+
+    return 0;
+}
+*/
+
+#include <stdio.h>
+
+int main() {
+    char strArray[256]; // Declare a strArray with a size of 256 bytes
+
+    // Read data into the strArray from stdin
+    printf("Enter some text: ");
+    fgets(strArray, sizeof(strArray), stdin); // Reading from stdin to strArray
+
+    // Output the data stored in the strArray
+    printf("You entered: %s", strArray); // Writing from strArray to stdout
+
+    return 0;
 }

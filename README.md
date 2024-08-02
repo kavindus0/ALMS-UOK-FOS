@@ -44,11 +44,11 @@ The **Advanced Level Section Management System** is a comprehensive solution des
 
 This project was developed by a team of undergraduate students from the University of Kelaniya (UOK):
 
-- **[KSB Galkotuwa]**
-- **[ABA Shanendri]**
-- **[Aruna Kaushalya]**
-- **[Thinuli Dilanka]**
-- **[Heshan Mayuranga]**
+- **KSB Galkotuwa**
+- **ABA Shanendri**
+- **Aruna Kaushalya**
+- **Thinuli Dilanka**
+- **Heshan Mayuranga**
 
 ## Development
 
@@ -62,8 +62,8 @@ The system was developed using the C programming language, focusing on efficienc
 
 1. **Clone the Repository**:
    ```bash
-   git clone [repository URL]
-   cd [repository directory]
+   git clone repository URL
+   cd repository directory
    ```
 
 2. **Compile the Code**:
@@ -84,7 +84,7 @@ The system was developed using the C programming language, focusing on efficienc
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the MIT License(LICENSE).
 
 ## Acknowledgements
 

@@ -23,9 +23,11 @@ void Credentials() {
             scanf("%d", &number);
             switch (number) {
                 case 1:
-                    printf("Enter Username:")
+                    printf("Enter Username:");
                 case 2:
+                    printf("");
                 case 3:
+                    printf("");
 
 
             }

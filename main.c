@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "ascciarts/arts.c"
-#include "credentials/arts.c"
+#include "credentials/credentials.c"
 
 /*
 int main() {

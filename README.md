@@ -42,10 +42,10 @@ The **Advanced Level Section Management System** is a comprehensive solution des
 
 ## Team Members
 
-This project was developed by a team of undergraduate students from the University of Kelaniya (UOK):
+This project was developed by a team of undergraduate students of Electronics And Computer Science from the University of Kelaniya (UOK):
 
-- **KSB Galkotuwa**
-- **ABA Shanendri**
+- **Kavindu Sachinthe**
+- **Abhishekya Shanendri**
 - **Aruna Kaushalya**
 - **Thinuli Dilanka**
 - **Heshan Mayuranga**

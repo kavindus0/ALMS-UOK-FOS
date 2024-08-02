@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
 void Credentials() {
     int number;
 
@@ -28,13 +27,7 @@ void Credentials() {
                     printf("");
                 case 3:
                     printf("");
-
-
             }
-
-
-
-
             break;
 
     }

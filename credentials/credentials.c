@@ -73,7 +73,7 @@ void Credentials() {
             scanf("%d", &number);
             switch (number) {
                 case 1:
-                    printf("Enter username: ");
+                    printf("\nEnter username: ");
                     scanf("%s", user.username);
                     printf("Enter password: ");
                     scanf("%s", user.password);

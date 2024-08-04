@@ -1,5 +1,7 @@
 # Advanced Level Section Management System
 
+![repository-open-graph-template](https://github.com/user-attachments/assets/2e0ce581-eb36-4b3a-bd8b-83cd44a2379b)
+
 ## Project Overview
 
 The **Advanced Level Section Management System** is a comprehensive solution designed to streamline and manage various administrative tasks for advanced level students. This project encompasses a variety of features including attendance tracking, timetable management, communication facilitation, fund management, examination analysis, HR management, and management of extra-curricular activities. High-security access protocols have been implemented to ensure data privacy and integrity.

@@ -3,3 +3,4 @@
 /communication/.vscode
 .idea
 ./idea
+*.iml

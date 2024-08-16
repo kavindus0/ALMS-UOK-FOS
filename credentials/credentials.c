@@ -103,6 +103,7 @@
 //}
 #include <stdio.h>
 #include <string.h>
+#include <time.h>
 
 #define FILENAME "users.txt"
 
@@ -111,6 +112,24 @@ struct User {
     char password[50];
     char role[20];
 };
+
+void logTrack(char* user){
+    FILE *fptrForLog = fopen("logtrack.txt","a");
+
+    time_t current_time;
+    // Get the current time
+    time(&current_time);
+
+    struct tm *local_time = localtime(&current_time);
+
+    char time_string[100];
+
+    strftime(time_string, sizeof(time_string), "%Y-%m-%d %H:%M:%S", local_time);
+
+    fprintf(fptrForLog,"%s logged at  %s\n",user, time_string);
+    fclose(fptrForLog);
+
+}
 
 void storeUser(struct User user) {
     FILE *file = fopen(FILENAME, "a");
@@ -132,7 +151,8 @@ int checkLogin(struct User *user) {
     struct User temp;
     while (fscanf(file, "%s %s %s", temp.username, temp.password, temp.role) != EOF) {
         if (strcmp(temp.username, user->username) == 0 && strcmp(temp.password, user->password) == 0) {
-            strcpy(user->role, temp.role); // Set the role of the logged-in user
+            strcpy(user->role, temp.role);
+            strcpy(user->username,temp.username);// Set the role of the logged-in user
             fclose(file);
             return 1; // Login successful
         }
@@ -147,12 +167,19 @@ void loginUser(struct User *user) {
         printf("Login successful!\n");
         if (strcmp(user->role, "Teacher") == 0) {
             printf("Welcome to the Teacher's Portal.\n");
+            printf("Welcome %s !",user->username);
+            logTrack(user->username);
+
             // Additional teacher-specific logic
         } else if (strcmp(user->role, "Student") == 0) {
             printf("Welcome to the Student's Portal.\n");
+            printf("Welcome %s !",user->username);
+            logTrack(user->username);
             // Additional student-specific logic
         } else if (strcmp(user->role, "Staff Member") == 0) {
             printf("Welcome to the Staff Member's Portal.\n");
+            printf("Welcome %s !",user->username);
+            logTrack(user->username);
             // Additional staff member-specific logic
         }
     } else {

@@ -2,7 +2,7 @@
 // #include <json-c/json.h>
 #include "ascciarts/arts.c"
 #include "credentials/credentials.c"
-#include "credentials/credentials.c"
+
 
 int main()
 {

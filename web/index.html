@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A/L Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>A/L Management System</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#attendance">Attendance</a></li>
+            <li><a href="#timetable">Timetable</a></li>
+            <li><a href="#communication">Communication</a></li>
+            <li><a href="#fund">Fund Management</a></li>
+            <li><a href="#examination">Examination Analysis</a></li>
+            <li><a href="#hr">HR Management</a></li>
+            <li><a href="#activities">Extra Activities</a></li>
+            <li><a href="#loginactivities">Login Records</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="attendance">
+            <h2>Attendance</h2>
+            <p>Manage student attendance records here.</p>
+        </section>
+        <br>
+        <br>
+        <section id="timetable">
+            <h2>Timetable</h2>
+            <p>View and edit class timetables.</p>
+        </section>
+        <br>
+        <br>
+        <section id="communication">
+            <h2>Communication</h2>
+            <p>Communicate with teachers and students.</p>
+        </section>
+        <br>
+        <br>
+        <section id="fund">
+            <h2>Fund Management</h2>
+            <p>Track and manage funds for the system.</p>
+        </section>
+
+        <section id="examination">
+            <h2>Examination Analysis</h2>
+            <p>Analyze examination results.</p>
+        </section>
+
+        <section id="hr">
+            <h2>HR Management</h2>
+            <p>Manage human resources within the system.</p>
+        </section>
+
+        <section id="activities">
+            <h2>Extra Activities</h2>
+            <p>Manage and schedule extra-curricular activities.</p>
+        </section>
+        <section id="loginactivities">
+            <h2>loginactivities</h2>
+            <p>Manage student attendance records here.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 A/L Management System</p>
+    </footer>
+    <script>
+        // Function to read the text file
+        function readTextFile(file, callback) {
+            const rawFile = new XMLHttpRequest();
+            rawFile.overrideMimeType("text/plain");
+            rawFile.open("GET", file, true);
+            rawFile.onreadystatechange = function () {
+                if (rawFile.readyState === 4 && rawFile.status == "200") {
+                    callback(rawFile.responseText);
+                }
+            };
+            rawFile.send(null);
+        }
+
+        // Callback function to process the file content
+        readTextFile("../logtrack.txt", function (text) {
+            const lines = text.split("\n");
+            const contentDiv = document.getElementById("content");
+
+            lines.forEach(line => {
+                const p = document.createElement("p");
+                p.textContent = line;
+                contentDiv.appendChild(p);
+            });
+        });
+    </script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

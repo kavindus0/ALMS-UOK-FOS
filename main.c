@@ -6,7 +6,9 @@
 
 int main()
 {
-    IntroAscciArt();
-    Credentials();
+    while (1==1) {
+        IntroAscciArt();
+        Credentials();
+    }
     return 0;
 }

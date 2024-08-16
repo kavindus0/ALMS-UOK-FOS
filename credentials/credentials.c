@@ -1,6 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <stdio.h>
 #include <string.h>
 
 #define FILENAME "users.txt"
@@ -81,7 +79,7 @@ void Credentials() {
                     printf("Registration successful!\n");
                     break;
                 case 2:
-                    printf("Enter username: ");
+                    printf("\nEnter username: ");
                     scanf("%s", user.username);
                     printf("Enter password: ");
                     scanf("%s", user.password);
@@ -89,7 +87,7 @@ void Credentials() {
                     printf("Registration successful!\n");
                     break;
                 case 3:
-                    printf("Enter username: ");
+                    printf("\nEnter username: ");
                     scanf("%s", user.username);
                     printf("Enter password: ");
                     scanf("%s", user.password);

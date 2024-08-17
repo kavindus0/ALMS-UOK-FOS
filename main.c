@@ -12,7 +12,7 @@ int main()
     };
    // while (1==1) {
         IntroAscciArt();
-        struct liveuser->role = Credentials();
+        Credentials();
    // }
     return 0;
 }

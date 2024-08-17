@@ -114,7 +114,7 @@ struct User {
 };
 
 void logTrack(char* user){
-    FILE *fptrForLog = fopen("logtrack.txt","a");
+    FILE *fptrForLog = fopen("./loginRecords/logtrack.txt","a");
 
     time_t current_time;
     // Get the current time
@@ -167,18 +167,18 @@ void loginUser(struct User *user) {
         printf("Login successful!\n");
         if (strcmp(user->role, "Teacher") == 0) {
             printf("Welcome to the Teacher's Portal.\n");
-            printf("Welcome %s !",user->username);
+            printf("Welcome %s !\n",user->username);
             logTrack(user->username);
 
             // Additional teacher-specific logic
         } else if (strcmp(user->role, "Student") == 0) {
             printf("Welcome to the Student's Portal.\n");
-            printf("Welcome %s !",user->username);
+            printf("Welcome %s !\n",user->username);
             logTrack(user->username);
             // Additional student-specific logic
         } else if (strcmp(user->role, "Staff Member") == 0) {
             printf("Welcome to the Staff Member's Portal.\n");
-            printf("Welcome %s !",user->username);
+            printf("Welcome %s !\n",user->username);
             logTrack(user->username);
             // Additional staff member-specific logic
         }

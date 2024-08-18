@@ -114,7 +114,7 @@ struct User {
 };
 
 void logTrack(char* user){
-    FILE *fptrForLog = fopen("./loginRecords/logtrack.txt","a");
+    FILE *fptrForLog = fopen("./loginRecords/logtrack.html","a");
 
     time_t current_time;
     // Get the current time
@@ -126,7 +126,7 @@ void logTrack(char* user){
 
     strftime(time_string, sizeof(time_string), "%Y-%m-%d %H:%M:%S", local_time);
 
-    fprintf(fptrForLog,"%s logged at  %s\n",user, time_string);
+    fprintf(fptrForLog,"\n<h4>%s logged at  %s</h4>\n",user, time_string);
     fclose(fptrForLog);
 
 }

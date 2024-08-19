@@ -9,23 +9,18 @@ h1 {
     letter-spacing: 2px;
 }
 
-/* Styling for the list items (h4 elements) */
+/* Styling for the list items (h4 elements) as WhatsApp-style messages */
 h4 {
+    position: relative;
+    background-color: #dcf8c6;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 15px 0;
+    display: inline-block;
+    max-width: 80%;
+    word-wrap: break-word;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     font-family: 'Verdana', sans-serif;
     font-size: 1.2em;
     color: #555;
-    margin: 10px 0;
-    padding: 10px;
-    background-color: #f0f0f0;
-    border-left: 4px solid #007BFF;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease;
 }
-
-/* Hover effect for list items */
-h4:hover {
-    background-color: #e0e0e0;
-    border-left-color: #0056b3;
-}
-

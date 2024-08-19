@@ -2,7 +2,8 @@
 #include <stdio.h>
 #include <string.h>
 #include <time.h>
-#import "../main.c"
+#import <stdlib.h>
+#import "../mainsplit.c"
 
 #define FILENAME "users.txt"
 
@@ -75,11 +76,14 @@ void loginUser(struct User *user) {
             printf("Welcome to the Student's Portal.\n");
             printf("Welcome %s !\n",user->username);
             logTrack(user->username);
+            StudentsThing();
+
             // Additional student-specific logic
         } else if (strcmp(user->role, "Staff Member") == 0) {
             printf("Welcome to the Staff Member's Portal.\n");
             printf("Welcome %s !\n",user->username);
             logTrack(user->username);
+            StaffThing();
             // Additional staff member-specific logic
         }
     } else {

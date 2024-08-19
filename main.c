@@ -14,7 +14,7 @@ int main()
 }
 
 void TeachersThing(){
-    
+    printf("Teachers Thing");
 }
 
 

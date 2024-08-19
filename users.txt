@@ -1,2 +1,4 @@
 kavindus 9411 Student
 pubudus 11223 Teacher
+sumudu ss Staff Member
+t t Teacher

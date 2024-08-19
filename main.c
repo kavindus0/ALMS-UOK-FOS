@@ -15,7 +15,7 @@ int main()
             printf("Welcome Student %s\n", temp.username);
         } else if (temp.role == "Staff Member") {
             printf("Welcome Staff Member %s\n", temp.username);
-        } else if(temp.role == null) {
+        } else if(temp.role == NULL) {
             printf("Please Retry %s\n", temp.username);
         }
 

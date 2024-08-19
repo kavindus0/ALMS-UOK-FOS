@@ -107,7 +107,7 @@ void registerUser(struct User *user) {
             strcpy(user->role, "Student");
             break;
         case 3:
-            strcpy(user->role, "Staff Member");
+            strcpy(user->role, "StaffMember");
             break;
         default:
             printf("Invalid choice. Defaulting to Student.\n");

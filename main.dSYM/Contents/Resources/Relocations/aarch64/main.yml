@@ -1,0 +1,14 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     main
+relocations:
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _IntroAscciArt, symObjAddr: 0x0, symBinAddr: 0x10000300C, symSize: 0xB4 }
+  - { offsetInCU: 0x4E, offset: 0x4E, size: 0x8, addend: 0x0, symName: _IntroAscciArt, symObjAddr: 0x0, symBinAddr: 0x10000300C, symSize: 0xB4 }
+  - { offsetInCU: 0x63, offset: 0x63, size: 0x8, addend: 0x0, symName: _logTrack, symObjAddr: 0xB4, symBinAddr: 0x1000030C0, symSize: 0xC8 }
+  - { offsetInCU: 0xC0, offset: 0xC0, size: 0x8, addend: 0x0, symName: _storeUser, symObjAddr: 0x17C, symBinAddr: 0x100003188, symSize: 0x9C }
+  - { offsetInCU: 0xF3, offset: 0xF3, size: 0x8, addend: 0x0, symName: _checkLogin, symObjAddr: 0x218, symBinAddr: 0x100003224, symSize: 0x170 }
+  - { offsetInCU: 0x138, offset: 0x138, size: 0x8, addend: 0x0, symName: _loginUser, symObjAddr: 0x388, symBinAddr: 0x100003394, symSize: 0x158 }
+  - { offsetInCU: 0x15C, offset: 0x15C, size: 0x8, addend: 0x0, symName: _registerUser, symObjAddr: 0x4E0, symBinAddr: 0x1000034EC, symSize: 0x1D4 }
+  - { offsetInCU: 0x18E, offset: 0x18E, size: 0x8, addend: 0x0, symName: _Credentials, symObjAddr: 0x6B4, symBinAddr: 0x1000036C0, symSize: 0x138 }
+  - { offsetInCU: 0x1C0, offset: 0x1C0, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x7EC, symBinAddr: 0x1000037F8, symSize: 0x30 }
+...

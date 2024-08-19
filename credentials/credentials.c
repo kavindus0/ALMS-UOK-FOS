@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <time.h>
+#import "../main.c"
 
 #define FILENAME "users.txt"
 
@@ -67,6 +68,7 @@ void loginUser(struct User *user) {
             printf("Welcome to the Teacher's Portal.\n");
             printf("Welcome %s !\n",user->username);
             logTrack(user->username);
+            TeachersThing();
 
             // Additional teacher-specific logic
         } else if (strcmp(user->role, "Student") == 0) {

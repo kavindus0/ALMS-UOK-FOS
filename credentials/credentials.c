@@ -1,8 +1,109 @@
-
+//#include <stdio.h>
+//#include <string.h>
+//
+//#define FILENAME "users.txt"
+//
+//struct User {
+//    char username[50];
+//    char password[50];
+//};
+//
+//void storeUser(struct User user) {
+//    FILE *file = fopen(FILENAME, "a");
+//    if (file == NULL) {
+//        printf("Error opening file!\n");
+//        return;
+//    }
+//    fprintf(file, "%s %s\n", user.username, user.password);
+//    fclose(file);
+//}
+//
+//int checkLogin(struct User user) {
+//    FILE *file = fopen(FILENAME, "r");
+//    if (file == NULL) {
+//        printf("Error opening file!\n");
+//        return 0;
+//    }
+//
+//    struct User temp;
+//    while (fscanf(file, "%s %s", temp.username, temp.password) != EOF) {
+//        if (strcmp(temp.username, user.username) == 0 && strcmp(temp.password, user.password) == 0) {
+//            fclose(file);
+//            return 1; // Login successful
+//        }
+//    }
+//
+//    fclose(file);
+//    return 0; // Login failed
+//}
+//
+//void Credentials() {
+//    int number;
+//    int choice;
+//    struct User user;
+//
+//
+//    printf("> 1. Login \n");
+//    printf("> 2. Register \n\n");
+//    printf("> Enter the number & hit ENTER: ");
+//    scanf("%d", &number);
+//
+//    switch (number) {
+//        case (1):
+//            printf("\nLogin\n");
+//            printf("Enter username: ");
+//            scanf("%s", user.username);
+//            printf("Enter password: ");
+//            scanf("%s", user.password);
+//
+//            if (checkLogin(user)) {
+//                printf("Login successful!\n");
+//            } else {
+//                printf("Invalid username or password.\n");
+//            }
+//            break;
+//        case (2):
+//            printf("\nRegister as,\n");
+//            printf("> 1. Teacher \n");
+//            printf("> 2. Student \n");
+//            printf("> 3. Staff Member \n");
+//            printf("> Enter the number & hit ENTER: ");
+//            scanf("%d", &number);
+//            switch (number) {
+//                case 1:
+//                    printf("\nEnter username: ");
+//                    scanf("%s", user.username);
+//                    printf("Enter password: ");
+//                    scanf("%s", user.password);
+//                    storeUser(user);
+//                    printf("Registration successful!\n");
+//                    break;
+//                case 2:
+//                    printf("\nEnter username: ");
+//                    scanf("%s", user.username);
+//                    printf("Enter password: ");
+//                    scanf("%s", user.password);
+//                    storeUser(user);
+//                    printf("Registration successful!\n");
+//                    break;
+//                case 3:
+//                    printf("\nEnter username: ");
+//                    scanf("%s", user.username);
+//                    printf("Enter password: ");
+//                    scanf("%s", user.password);
+//                    storeUser(user);
+//                    printf("Registration successful!\n");
+//            break;
+//            }
+//
+//            break;
+//
+//    }
+//
+//}
 #include <stdio.h>
 #include <string.h>
 #include <time.h>
-#include <stdlib.h>
 
 #define FILENAME "users.txt"
 
@@ -14,11 +115,17 @@ struct User {
 
 void logTrack(char* user){
     FILE *fptrForLog = fopen("./loginRecords/logtrack.html","a");
+
     time_t current_time;
+    // Get the current time
     time(&current_time);
+
     struct tm *local_time = localtime(&current_time);
+
     char time_string[100];
+
     strftime(time_string, sizeof(time_string), "%Y-%m-%d %H:%M:%S", local_time);
+
     fprintf(fptrForLog,"\n<h4>%s logged at  %s</h4>\n",user, time_string);
     fclose(fptrForLog);
 
@@ -55,7 +162,7 @@ int checkLogin(struct User *user) {
     return 0; // Login failed
 }
 
-int loginUser(struct User *user) {
+void loginUser(struct User *user) {
     if (checkLogin(user)) {
         printf("Login successful!\n");
         if (strcmp(user->role, "Teacher") == 0) {
@@ -77,8 +184,6 @@ int loginUser(struct User *user) {
         }
     } else {
         printf("Invalid username or password.\n");
-        //EXIT_CODE = EXIT_FAILURE;
-      //  logTrack(user->username);
     }
 }
 
@@ -115,7 +220,7 @@ void registerUser(struct User *user) {
     printf("Registration successful!\n");
 }
 
-struct User  Credentials() {
+void Credentials() {
     int number;
     struct User user;
 
@@ -139,5 +244,4 @@ struct User  Credentials() {
         default:
             printf("Invalid option. Please try again.\n");
     }
-    return user;
 }

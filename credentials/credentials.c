@@ -24,7 +24,7 @@ void logTrack(char* user){
 
     strftime(time_string, sizeof(time_string), "%Y-%m-%d %H:%M:%S", local_time);
 
-    fprintf(fptrForLog,"\n<h4>%s logged at  %s</h4>\n",user, time_string);
+    fprintf(fptrForLog,"\n<h4>%s logged at  %s</h4>\n<br>",user, time_string);
     fclose(fptrForLog);
 
 }

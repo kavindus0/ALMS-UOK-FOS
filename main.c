@@ -12,3 +12,16 @@ int main()
 
     return 0;
 }
+
+void TeachersThing(){
+    
+}
+
+
+void StudentsThing(){
+    
+}
+
+void StaffThing(){
+    
+}

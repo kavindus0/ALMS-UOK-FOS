@@ -4,6 +4,7 @@
 #include <time.h>
 #import <stdlib.h>
 #import "../mainsplit.c"
+#include "LogTrackRecords.c"
 
 #define FILENAME "users.txt"
 
@@ -12,24 +13,6 @@ struct User {
     char password[50];
     char role[20];
 };
-
-void logTrack(char* user){
-    FILE *fptrForLog = fopen("./loginRecords/logtrack.html","a");
-
-    time_t current_time;
-    // Get the current time
-    time(&current_time);
-
-    struct tm *local_time = localtime(&current_time);
-
-    char time_string[100];
-
-    strftime(time_string, sizeof(time_string), "%Y-%m-%d %H:%M:%S", local_time);
-
-    fprintf(fptrForLog,"\n<h4>%s logged at  %s</h4>\n<br>",user, time_string);
-    fclose(fptrForLog);
-
-}
 
 void storeUser(struct User user) {
     FILE *file = fopen(FILENAME, "a");
@@ -41,23 +24,31 @@ void storeUser(struct User user) {
     fclose(file);
 }
 
+void registerCodeRefactor(char *role, struct User *user) {
+    printf("\nEnter username: ");
+    scanf("%s", user->username);
+    printf("Enter password: ");
+    scanf("%s", user->password);
+    strcpy(user->role, role);
+    storeUser(*user);
+}
+
+
 int checkLogin(struct User *user) {
     FILE *file = fopen(FILENAME, "r");
     if (file == NULL) {
         printf("Error opening file!\n");
         return 0;
     }
-
     struct User temp;
     while (fscanf(file, "%s %s %s", temp.username, temp.password, temp.role) != EOF) {
         if (strcmp(temp.username, user->username) == 0 && strcmp(temp.password, user->password) == 0) {
             strcpy(user->role, temp.role);
-            strcpy(user->username,temp.username);// Set the role of the logged-in user
+            strcpy(user->username, temp.username);// Set the role of the logged-in user
             fclose(file);
             return 1; // Login successful
         }
     }
-
     fclose(file);
     return 0; // Login failed
 }
@@ -66,28 +57,27 @@ void loginUser(struct User *user) {
     if (checkLogin(user)) {
         printf("Login successful!\n");
         if (strcmp(user->role, "Teacher") == 0) {
-            printf("Welcome to the Teacher's Portal.\n");
-            printf("Welcome %s !\n",user->username);
-            logTrack(user->username);
+            printf("\nWelcome to the Teacher's Portal.\n");
+            printf("Welcome %s !\n", user->username);
+            logTrackTrue(user->username);
             TeachersThing();
-
             // Additional teacher-specific logic
         } else if (strcmp(user->role, "Student") == 0) {
-            printf("Welcome to the Student's Portal.\n");
-            printf("Welcome %s !\n",user->username);
-            logTrack(user->username);
+            printf("\nWelcome to the Student's Portal.\n");
+            printf("Welcome %s !\n", user->username);
+            logTrackTrue(user->username);
             StudentsThing();
-
             // Additional student-specific logic
         } else if (strcmp(user->role, "Staff Member") == 0) {
-            printf("Welcome to the Staff Member's Portal.\n");
-            printf("Welcome %s !\n",user->username);
-            logTrack(user->username);
+            printf("\nWelcome to the Staff Member's Portal.\n");
+            printf("Welcome %s !\n", user->username);
+            logTrackTrue(user->username);
             StaffThing();
             // Additional staff member-specific logic
         }
     } else {
-        printf("Invalid username or password.\n");
+        logTrackFalse(user->username);
+        printf("\nInvalid username or password.\n");
     }
 }
 
@@ -100,29 +90,21 @@ void registerUser(struct User *user) {
     printf("> Enter the number & hit ENTER: ");
     scanf("%d", &choice);
 
-    printf("\nEnter username: ");
-    scanf("%s", user->username);
-    printf("Enter password: ");
-    scanf("%s", user->password);
-
-    switch (choice) {
-        case 1:
-            strcpy(user->role, "Teacher");
-            break;
-        case 2:
-            strcpy(user->role, "Student");
-            break;
-        case 3:
-            strcpy(user->role, "StaffMember");
-            break;
-        default:
-            printf("Invalid choice. Defaulting to Student.\n");
-            strcpy(user->role, "Student");
+    if (choice == 1) {
+        registerCodeRefactor("Teacher", user);
+    } else if (choice == 2) {
+        registerCodeRefactor("Student", user);
+    }
+    else if (choice == 3) {
+        registerCodeRefactor("StaffMember", user);
+    } else {
+        printf("Invalid choice. Defaulting to Student.\n");
+        registerCodeRefactor("Student", user);
     }
 
-    storeUser(*user);
     printf("Registration successful!\n");
 }
+
 
 void Credentials() {
     int number;

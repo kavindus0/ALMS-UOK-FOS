@@ -33,19 +33,14 @@ void TimeTable();
             printf("Invalid input\n");
             break;
     }
-
-
 }
-
 
 void StudentsThing(){
     printf("Teachers Thing");
-
 }
 
 void StaffThing(){
     printf("Teachers Thing");
-
 }
 
 

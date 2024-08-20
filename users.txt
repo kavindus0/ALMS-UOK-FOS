@@ -3,3 +3,7 @@ pubudus 11223 Teacher
 t t Teacher
 sumudu ss StaffMember
 ss ss Teacher
+Nirmal Sumedha Teacher
+e e Teacher
+ee ee Student
+22 22 StaffMember

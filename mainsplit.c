@@ -3,7 +3,6 @@
 //
 #import <stdio.h>
 #import "./communication/Communication.c"
-#import <string.h>
 
 
 void TeachersThing(){

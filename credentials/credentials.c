@@ -32,7 +32,7 @@ void registerCodeRefactor(char *role, struct User *user) {
     strcpy(user->role, role);
     storeUser(*user);
     printf("Registration successful!\n");
-    
+
 }
 
 
@@ -90,21 +90,26 @@ void registerUser(struct User *user) {
     printf("> 2. Student \n");
     printf("> 3. Staff Member \n");
     printf("> Enter the number & hit ENTER: ");
-    scanf("%d", &choice);
 
-    if (choice == 1) {
+    if (scanf("%d", &choice) == 1) {
         registerCodeRefactor("Teacher", user);
-    } else if (choice == 2) {
+    } else if (scanf("%d", &choice) == 2) {
         registerCodeRefactor("Student", user);
     }
-    else if (choice == 3) {
+    else if (scanf("%d", &choice) == 3) {
         registerCodeRefactor("StaffMember", user);
-    } else if(choice > 3) {
+    } else if(scanf("%d", &choice) > 3) {
         printf("Invalid choice. Defaulting to Student.\n");
         registerCodeRefactor("Student", user);
     }
     else{
-        printf("Invalid choice.\n");
+                    printf("Invalid option. Please try again.\n");
+
+
+
+
+
+        exit(EXIT_FAILURE);
 
     }
 

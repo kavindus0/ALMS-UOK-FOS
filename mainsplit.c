@@ -14,7 +14,7 @@ void ExtraActivities();
 void TimeTable();
 
      int input;
-    printf("\nEnter a number:\n1. EDUconnect Communication Portal\n2. HR\n3. Extra Activities\n4. Time Table\n");
+    printf("\n1. EDUconnect Communication Portal\n2. HR\n3. Extra Activities\n4. Time Table\n\nEnter a number:");
     scanf("%d", &input);
         switch (input) {
         case 1:

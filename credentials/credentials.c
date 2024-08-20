@@ -31,6 +31,8 @@ void registerCodeRefactor(char *role, struct User *user) {
     scanf("%s", user->password);
     strcpy(user->role, role);
     storeUser(*user);
+    printf("Registration successful!\n");
+    
 }
 
 
@@ -97,12 +99,15 @@ void registerUser(struct User *user) {
     }
     else if (choice == 3) {
         registerCodeRefactor("StaffMember", user);
-    } else {
+    } else if(choice > 3) {
         printf("Invalid choice. Defaulting to Student.\n");
         registerCodeRefactor("Student", user);
     }
+    else{
+        printf("Invalid choice.\n");
 
-    printf("Registration successful!\n");
+    }
+
 }
 
 

@@ -3,11 +3,8 @@
 //
 
 #import "../mainsplit.c"
-#import <stdlib.h>
 #include <time.h>
-#include <string.h>
 #include <stdio.h>
-#include "LogTrackRecords.h"
 
 void logTrackTrue(char* user){
     FILE *fptrForLog = fopen("./loginRecords/logtrack.html","a");
@@ -40,7 +37,7 @@ void logTrackFalse(char* user){
 
     strftime(time_string, sizeof(time_string), "%Y-%m-%d %H:%M:%S", local_time);
 
-    fprintf(fptrForLog,"\n<h4 class=\"logFail\">Unrecognize Loggin Attempt Prohibited for username:<i> %s </i> at  %s</h4>\n<br>",user, time_string);
+    fprintf(fptrForLog,"\n<h4 class=\"logFail\">Unrecognized Logging Attempt Prohibited for username:<i> %s </i> at  %s</h4>\n<br>",user, time_string);
     fclose(fptrForLog);
 
 }

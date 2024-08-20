@@ -6,13 +6,29 @@ h1 {
     text-align: center;
     margin-bottom: 20px;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
 }
 
 /* Styling for the list items (h4 elements) as WhatsApp-style messages */
 h4 {
+
     position: relative;
     background-color: #dcf8c6;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 15px 0;
+    display: inline-block;
+    max-width: 80%;
+    word-wrap: break-word;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: 'Verdana', sans-serif;
+    font-size: 1.2em;
+    color: #555;
+}
+
+.logFail {
+    position: relative;
+    background-color: lightcoral;
     padding: 15px;
     border-radius: 10px;
     margin: 15px 0;

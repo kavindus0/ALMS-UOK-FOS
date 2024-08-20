@@ -95,22 +95,14 @@ void registerUser(struct User *user) {
         registerCodeRefactor("Teacher", user);
     } else if (scanf("%d", &choice) == 2) {
         registerCodeRefactor("Student", user);
-    }
-    else if (scanf("%d", &choice) == 3) {
+    } else if (scanf("%d", &choice) == 3) {
         registerCodeRefactor("StaffMember", user);
-    } else if(scanf("%d", &choice) > 3) {
+    } else if (scanf("%d", &choice) > 3) {
         printf("Invalid choice. Defaulting to Student.\n");
         registerCodeRefactor("Student", user);
-    }
-    else{
-                    printf("Invalid option. Please try again.\n");
-
-
-
-
-
+    } else {
+        printf("Invalid option. Please try again.\n");
         exit(EXIT_FAILURE);
-
     }
 
 }

@@ -83,3 +83,15 @@ h1 {
     color: #999;
     text-align: right;
 }
+
+.message-bubble-tchr {
+    background-color:yellow;
+    padding: 10px 15px;
+    border-radius: 15px;
+    position: relative;
+    margin: 10px 0;
+    max-width: 80%;
+    font-size: 16px;
+    color: #333;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}

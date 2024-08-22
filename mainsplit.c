@@ -90,7 +90,7 @@ void EDUcom(char *user) {
             printf("\nSchool Announcement Logged\n");
             printf("\nWrite And HIT ENTRE to Send a Notification to Announcement\n");
             char announcement[10000];
-            scanf("%s", announcement);
+            fgets(announcement, sizeof(announcement), stdin);
             FILE *fptrForAnnounce = fopen("./communication/SchoolAnnouncement/index.html", "a");
             if (fptrForAnnounce == NULL) {
                 printf("Error opening file!\n");

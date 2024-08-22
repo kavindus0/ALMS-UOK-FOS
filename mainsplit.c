@@ -90,7 +90,9 @@ void EDUcom(char *user) {
             printf("\nSchool Announcement Logged\n");
             printf("\nWrite And HIT ENTRE to Send a Notification to Announcement\n");
             char announcement[10000];
-            fgets(announcement, sizeof(announcement), stdin);
+            getchar(); // To consume the newline character left by previous scanf
+fgets(announcement, sizeof(announcement), stdin);
+
             FILE *fptrForAnnounce = fopen("./communication/SchoolAnnouncement/index.html", "a");
             if (fptrForAnnounce == NULL) {
                 printf("Error opening file!\n");
@@ -110,7 +112,7 @@ void EDUcom(char *user) {
             fprintf(fptrForAnnounce, "    <div class=\"message-body\">%s</div>\n", announcement);
             fprintf(fptrForAnnounce, "    <div class=\"message-time\">%s</div>\n", buffer);
             fprintf(fptrForAnnounce, "</div>\n");
-            printf("%s Successfully Printed\n", user);
+            printf("Message Successfully Sent at : %s\n",buffer);
             fclose(fptrForAnnounce);
             break;
         case 2:

@@ -135,15 +135,14 @@ void EDUcomTchr(char *user) {
             break;
         case 2:
             printf("\nOpen Portal Logged\n");
-
-            printf("\nOpen Portal Logged\n");
-             printf("\nSchool Open Portal Logged\n");
+            printf("\nSchool Open Portal Logged\n");
             printf("\nWrite And HIT ENTRE to Send a Notification to Announcement\n");
             char announcement4Open[10000];
-            getchar(); // To consume the newline character left by previous scanf
-            fgets(announcement, sizeof(announcement), stdin);
+            getchar();
+            fgets(announcement4Open, sizeof(announcement), stdin);
             FILE *fptrForOpen = fopen("./communication/OpenPortal/index.html", "a");
-            if (fptrForAnnounce == NULL) {
+
+            if (fptrForOpen == NULL) {
                 printf("Error opening file!\n");
                 return;
             }
@@ -156,14 +155,13 @@ void EDUcomTchr(char *user) {
 
             strftime(buffer, 26, "%Y-%m-%d %H:%M:%S", tm_info);
             // printf("Current Date and Time: %s\n", buffer);
-            fprintf(fptrForAnnounce, "<div class=\"message-bubble\">\n");
-            fprintf(fptrForAnnounce, "    <div class=\"sender-name\">%s</div>\n", user);
-            fprintf(fptrForAnnounce, "    <div class=\"message-body\">%s</div>\n", announcement);
-            fprintf(fptrForAnnounce, "    <div class=\"message-time\">%s</div>\n", buffer);
-            fprintf(fptrForAnnounce, "</div>\n");
+            fprintf(fptrForOpen, "<div class=\"message-bubble\">\n");
+            fprintf(fptrForOpen, "    <div class=\"sender-name\">%s</div>\n", user);
+            fprintf(fptrForOpen, "    <div class=\"message-body\">%s</div>\n", announcement4Open);
+            fprintf(fptrForOpen, "    <div class=\"message-time\">%s</div>\n", buffer);
+            fprintf(fptrForOpen, "</div>\n");
             printf("Message Successfully Sent at : %s\n", buffer);
-            fclose(fptrForAnnounce);
-            break;
+            fclose(fptrForOpen);
             break;
         default:
             printf("\nInvalid input\n");

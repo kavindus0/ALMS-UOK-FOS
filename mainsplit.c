@@ -8,11 +8,17 @@ struct User {
 };
 
 void TeachersThing(char *user);
+
 void StudentsThing();
+
 void StaffThing();
+
 void HR();
+
 void ExtraActivities();
+
 void TimeTable();
+
 void EDUcom(char *user);
 
 
@@ -64,7 +70,7 @@ void TimeTable() {
 
 void EDUcom(char *user) {
     printf("\n---- EDUconnect Communication Portal -----\n");
-    printf("\n---- Logged As %s -----\n",user);
+    printf("\n---- Logged As %s -----\n", user);
     printf("1. School Announcement\n");
     printf("2. Open Portal\n");
     printf("Enter a number and Hit ENTER: ");
@@ -76,13 +82,16 @@ void EDUcom(char *user) {
             printf("\nWrite And HIT ENTRE to Send a Notification to Announcement\n");
             char announcement[100];
             scanf("%s", announcement);
-            FILE *fptrForAnnounce = fopen("./communication/SchoolAnnouncement/index.html","a");
-    if (fptrForAnnounce == NULL) {
-        printf("Error opening file!\n");
-        return;
-    }
-    fprintf(fptrForAnnounce, "%s", announcement);
-
+            FILE *fptrForAnnounce = fopen("./communication/SchoolAnnouncement/index.html", "a");
+            if (fptrForAnnounce == NULL) {
+                printf("Error opening file!\n");
+                return;
+            }
+          fprintf(fptrForAnnounce, "<div class=\"message-bubble\">\n");
+            fprintf(fptrForAnnounce, "    <div class=\"sender-name\">%s</div>\n", user);
+            fprintf(fptrForAnnounce, "    <div class=\"message-body\">%s</div>\n", announcement);
+            fprintf(fptrForAnnounce, "    <div class=\"message-time\">%s</div>\n", "10:47 AM | August 20, 2024");
+            fprintf(fptrForAnnounce, "</div>\n");
             printf("%s Successfully Printed\n", user);
             fclose(fptrForAnnounce);
             break;

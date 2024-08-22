@@ -69,7 +69,7 @@ void loginUser(struct User *user) {
             printf("\nWelcome to the Staff Member's Portal.\n");
             printf("Welcome %s !\n", user->username);
             logTrackTrue(user->username);
-            StaffThing();
+            StaffThing(user->username);
             // Additional staff member-specific logic
         }
     } else {

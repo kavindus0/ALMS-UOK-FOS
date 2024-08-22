@@ -15,4 +15,7 @@ pubudus 11223 Teacher
 t t Teacher
 athulath 112 Teacher
 sumudu 22 Teacher
-s s Teacher
+s s StaffMember
+sumudumal sa Teacher
+aa juu Teacher
+ss ssss StaffMember

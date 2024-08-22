@@ -107,7 +107,7 @@ fgets(announcement, sizeof(announcement), stdin);
             char buffer[26];
             strftime(buffer, 26, "%Y-%m-%d %H:%M:%S", tm_info);
            // printf("Current Date and Time: %s\n", buffer);
-            fprintf(fptrForAnnounce, "<div class=\"message-bubble\">\n");
+            fprintf(fptrForAnnounce, "<div class=\"message-bubble-tchr\">\n");
             fprintf(fptrForAnnounce, "    <div class=\"sender-name\">%s</div>\n", user);
             fprintf(fptrForAnnounce, "    <div class=\"message-body\">%s</div>\n", announcement);
             fprintf(fptrForAnnounce, "    <div class=\"message-time\">%s</div>\n", buffer);

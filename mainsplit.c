@@ -157,7 +157,6 @@ void EDUcomStaff(char *user) {
             char announcement[10000];
             getchar(); // To consume the newline character left by previous scanf
             fgets(announcement, sizeof(announcement), stdin);
-
             FILE *fptrForAnnounce = fopen("./communication/SchoolAnnouncement/index.html", "a");
             if (fptrForAnnounce == NULL) {
                 printf("Error opening file!\n");
@@ -165,10 +164,8 @@ void EDUcomStaff(char *user) {
             }
             time_t t;
             struct tm *tm_info;
-
             time(&t);
             tm_info = localtime(&t);
-
             char buffer[26];
             strftime(buffer, 26, "%Y-%m-%d %H:%M:%S", tm_info);
             // printf("Current Date and Time: %s\n", buffer);

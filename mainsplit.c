@@ -7,12 +7,12 @@
 
 void TeachersThing(){
 
-void EDUconnectCommunicationPortal();
-void HR();
-void ExtraActivities();
-void TimeTable();
+    void EDUconnectCommunicationPortal();
+    void HR();
+    void ExtraActivities();
+    void TimeTable();
 
-     int input;
+    int input;
     printf("\n1. EDUconnect Communication Portal\n2. HR\n3. Extra Activities\n4. Time Table\n\nEnter a number:");
     scanf("%d", &input);
         switch (input) {
@@ -35,17 +35,33 @@ void TimeTable();
 }
 
 void StudentsThing(){
-    printf("Teachers Thing");
+    printf("Student Thing");
 }
 
 void StaffThing(){
-    printf("Teachers Thing");
+    printf("Staff Thing");
 }
 
 
 
 void EDUconnectCommunicationPortal() {
-    printf("EDUconnect Communication Portal\n");
+    printf("\n---- EDUconnect Communication Portal -----\n");
+    printf("1.School Announcement\n");
+    printf("2.Open Portal\n");
+    printf("Enter a number and Hit ENTRE: ");
+    int input;
+    scanf("%d", &input);
+    switch (input) {
+        case 1:
+            printf("\nSchool Announcement Logged\n");
+            break;
+        case 2:
+            printf("\nOpen Portal Logged\n");
+            break;
+        default:
+            printf("\nInvalid input\n");
+            break;
+    }
 }
 
 void HR() {

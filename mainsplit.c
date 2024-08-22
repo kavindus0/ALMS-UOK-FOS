@@ -48,6 +48,15 @@ void TeachersThing(char *user) {
     }
 }
 
+#include <stdio.h>
+#include <time.h>
+//
+//int main() {
+//
+//
+//    return 0;
+//}
+
 void StudentsThing() {
     printf("Student Thing\n");
 }
@@ -80,17 +89,26 @@ void EDUcom(char *user) {
         case 1:
             printf("\nSchool Announcement Logged\n");
             printf("\nWrite And HIT ENTRE to Send a Notification to Announcement\n");
-            char announcement[100];
+            char announcement[10000];
             scanf("%s", announcement);
             FILE *fptrForAnnounce = fopen("./communication/SchoolAnnouncement/index.html", "a");
             if (fptrForAnnounce == NULL) {
                 printf("Error opening file!\n");
                 return;
             }
-          fprintf(fptrForAnnounce, "<div class=\"message-bubble\">\n");
+            time_t t;
+            struct tm *tm_info;
+
+            time(&t);
+            tm_info = localtime(&t);
+
+            char buffer[26];
+            strftime(buffer, 26, "%Y-%m-%d %H:%M:%S", tm_info);
+           // printf("Current Date and Time: %s\n", buffer);
+            fprintf(fptrForAnnounce, "<div class=\"message-bubble\">\n");
             fprintf(fptrForAnnounce, "    <div class=\"sender-name\">%s</div>\n", user);
             fprintf(fptrForAnnounce, "    <div class=\"message-body\">%s</div>\n", announcement);
-            fprintf(fptrForAnnounce, "    <div class=\"message-time\">%s</div>\n", "10:47 AM | August 20, 2024");
+            fprintf(fptrForAnnounce, "    <div class=\"message-time\">%s</div>\n", buffer);
             fprintf(fptrForAnnounce, "</div>\n");
             printf("%s Successfully Printed\n", user);
             fclose(fptrForAnnounce);

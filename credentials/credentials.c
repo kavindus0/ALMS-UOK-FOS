@@ -65,7 +65,7 @@ void loginUser(struct User *user) {
             logTrackTrue(user->username);
             StudentsThing();
             // Additional student-specific logic
-        } else if (strcmp(user->role, "Staff Member") == 0) {
+        } else if (strcmp(user->role, "StaffMember") == 0) {
             printf("\nWelcome to the Staff Member's Portal.\n");
             printf("Welcome %s !\n", user->username);
             logTrackTrue(user->username);
@@ -85,19 +85,22 @@ void registerUser(struct User *user) {
     printf("> 2. Student \n");
     printf("> 3. Staff Member \n");
     printf("> Enter the number & hit ENTER: ");
+scanf("%d", &choice);
 
-    if (scanf("%d", &choice) == 1) {
-        registerCodeRefactor("Teacher", user);
-    } else if (scanf("%d", &choice) == 2) {
-        registerCodeRefactor("Student", user);
-    } else if (scanf("%d", &choice) == 3) {
-        registerCodeRefactor("StaffMember", user);
-    } else if (scanf("%d", &choice) > 3) {
-        printf("Invalid choice. Defaulting to Student.\n");
-        registerCodeRefactor("Student", user);
-    } else {
-        printf("Invalid option. Please try again.\n");
-        exit(EXIT_FAILURE);
+    switch (choice) {
+        case 1:
+            registerCodeRefactor("Teacher", user);
+            break;
+        case 2:
+            registerCodeRefactor("Student", user);
+            break;
+        case 3:
+            registerCodeRefactor("StaffMember", user);
+            break;
+        default:
+            printf("Invalid choice. Defaulting to Student.\n");
+            registerCodeRefactor("Student", user);
+            break;
     }
 
 }

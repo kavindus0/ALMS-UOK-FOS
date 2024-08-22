@@ -2,13 +2,26 @@
 triple:          'arm64-apple-darwin'
 binary-path:     main
 relocations:
-  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _IntroAscciArt, symObjAddr: 0x0, symBinAddr: 0x10000300C, symSize: 0xB4 }
-  - { offsetInCU: 0x4E, offset: 0x4E, size: 0x8, addend: 0x0, symName: _IntroAscciArt, symObjAddr: 0x0, symBinAddr: 0x10000300C, symSize: 0xB4 }
-  - { offsetInCU: 0x63, offset: 0x63, size: 0x8, addend: 0x0, symName: _logTrack, symObjAddr: 0xB4, symBinAddr: 0x1000030C0, symSize: 0xC8 }
-  - { offsetInCU: 0xC0, offset: 0xC0, size: 0x8, addend: 0x0, symName: _storeUser, symObjAddr: 0x17C, symBinAddr: 0x100003188, symSize: 0x9C }
-  - { offsetInCU: 0xF3, offset: 0xF3, size: 0x8, addend: 0x0, symName: _checkLogin, symObjAddr: 0x218, symBinAddr: 0x100003224, symSize: 0x170 }
-  - { offsetInCU: 0x138, offset: 0x138, size: 0x8, addend: 0x0, symName: _loginUser, symObjAddr: 0x388, symBinAddr: 0x100003394, symSize: 0x158 }
-  - { offsetInCU: 0x15C, offset: 0x15C, size: 0x8, addend: 0x0, symName: _registerUser, symObjAddr: 0x4E0, symBinAddr: 0x1000034EC, symSize: 0x1D4 }
-  - { offsetInCU: 0x18E, offset: 0x18E, size: 0x8, addend: 0x0, symName: _Credentials, symObjAddr: 0x6B4, symBinAddr: 0x1000036C0, symSize: 0x138 }
-  - { offsetInCU: 0x1C0, offset: 0x1C0, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x7EC, symBinAddr: 0x1000037F8, symSize: 0x30 }
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _IntroAscciArt, symObjAddr: 0x0, symBinAddr: 0x1000023B0, symSize: 0xB4 }
+  - { offsetInCU: 0x5A, offset: 0x5A, size: 0x8, addend: 0x0, symName: _IntroAscciArt, symObjAddr: 0x0, symBinAddr: 0x1000023B0, symSize: 0xB4 }
+  - { offsetInCU: 0x6F, offset: 0x6F, size: 0x8, addend: 0x0, symName: _new, symObjAddr: 0xB4, symBinAddr: 0x100002464, symSize: 0x1C }
+  - { offsetInCU: 0x84, offset: 0x84, size: 0x8, addend: 0x0, symName: _SchoolAnnouncements, symObjAddr: 0xD0, symBinAddr: 0x100002480, symSize: 0x1C }
+  - { offsetInCU: 0x99, offset: 0x99, size: 0x8, addend: 0x0, symName: _OpenPortal, symObjAddr: 0xEC, symBinAddr: 0x10000249C, symSize: 0x1C }
+  - { offsetInCU: 0xAE, offset: 0xAE, size: 0x8, addend: 0x0, symName: _TeachersThing, symObjAddr: 0x108, symBinAddr: 0x1000024B8, symSize: 0xC0 }
+  - { offsetInCU: 0xE0, offset: 0xE0, size: 0x8, addend: 0x0, symName: _EDUcomTchr, symObjAddr: 0x1D8, symBinAddr: 0x100002588, symSize: 0x258 }
+  - { offsetInCU: 0x169, offset: 0x169, size: 0x8, addend: 0x0, symName: _StudentsThing, symObjAddr: 0x430, symBinAddr: 0x1000027E0, symSize: 0x1C }
+  - { offsetInCU: 0x17E, offset: 0x17E, size: 0x8, addend: 0x0, symName: _StaffThing, symObjAddr: 0x44C, symBinAddr: 0x1000027FC, symSize: 0xCC }
+  - { offsetInCU: 0x1B0, offset: 0x1B0, size: 0x8, addend: 0x0, symName: _EDUcomStaff, symObjAddr: 0x528, symBinAddr: 0x1000028D8, symSize: 0x258 }
+  - { offsetInCU: 0x239, offset: 0x239, size: 0x8, addend: 0x0, symName: _HR, symObjAddr: 0x780, symBinAddr: 0x100002B30, symSize: 0x1C }
+  - { offsetInCU: 0x24E, offset: 0x24E, size: 0x8, addend: 0x0, symName: _ExtraActivities, symObjAddr: 0x79C, symBinAddr: 0x100002B4C, symSize: 0x1C }
+  - { offsetInCU: 0x263, offset: 0x263, size: 0x8, addend: 0x0, symName: _TimeTable, symObjAddr: 0x7B8, symBinAddr: 0x100002B68, symSize: 0x1C }
+  - { offsetInCU: 0x278, offset: 0x278, size: 0x8, addend: 0x0, symName: _logTrackTrue, symObjAddr: 0x7D4, symBinAddr: 0x100002B84, symSize: 0xC8 }
+  - { offsetInCU: 0x2D5, offset: 0x2D5, size: 0x8, addend: 0x0, symName: _logTrackFalse, symObjAddr: 0x89C, symBinAddr: 0x100002C4C, symSize: 0xC8 }
+  - { offsetInCU: 0x332, offset: 0x332, size: 0x8, addend: 0x0, symName: _storeUser, symObjAddr: 0x964, symBinAddr: 0x100002D14, symSize: 0x9C }
+  - { offsetInCU: 0x365, offset: 0x365, size: 0x8, addend: 0x0, symName: _registerCodeRefactor, symObjAddr: 0xA00, symBinAddr: 0x100002DB0, symSize: 0xDC }
+  - { offsetInCU: 0x397, offset: 0x397, size: 0x8, addend: 0x0, symName: _checkLogin, symObjAddr: 0xADC, symBinAddr: 0x100002E8C, symSize: 0x170 }
+  - { offsetInCU: 0x3DC, offset: 0x3DC, size: 0x8, addend: 0x0, symName: _loginUser, symObjAddr: 0xC4C, symBinAddr: 0x100002FFC, symSize: 0x174 }
+  - { offsetInCU: 0x400, offset: 0x400, size: 0x8, addend: 0x0, symName: _registerUser, symObjAddr: 0xDC0, symBinAddr: 0x100003170, symSize: 0x174 }
+  - { offsetInCU: 0x432, offset: 0x432, size: 0x8, addend: 0x0, symName: _Credentials, symObjAddr: 0xF34, symBinAddr: 0x1000032E4, symSize: 0x138 }
+  - { offsetInCU: 0x464, offset: 0x464, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x106C, symBinAddr: 0x10000341C, symSize: 0x5C }
 ...

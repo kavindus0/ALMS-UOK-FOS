@@ -1,5 +1,6 @@
 #import <stdio.h>
 #import "./communication/Communication.c"
+#include <time.h>
 
 struct User {
     char username[50];
@@ -49,7 +50,6 @@ void TeachersThing(char *user) {
 }
 
 #include <stdio.h>
-#include <time.h>
 //
 //int main() {
 //
@@ -91,7 +91,7 @@ void EDUcom(char *user) {
             printf("\nWrite And HIT ENTRE to Send a Notification to Announcement\n");
             char announcement[10000];
             getchar(); // To consume the newline character left by previous scanf
-fgets(announcement, sizeof(announcement), stdin);
+            fgets(announcement, sizeof(announcement), stdin);
 
             FILE *fptrForAnnounce = fopen("./communication/SchoolAnnouncement/index.html", "a");
             if (fptrForAnnounce == NULL) {
@@ -106,13 +106,13 @@ fgets(announcement, sizeof(announcement), stdin);
 
             char buffer[26];
             strftime(buffer, 26, "%Y-%m-%d %H:%M:%S", tm_info);
-           // printf("Current Date and Time: %s\n", buffer);
+            // printf("Current Date and Time: %s\n", buffer);
             fprintf(fptrForAnnounce, "<div class=\"message-bubble-tchr\">\n");
             fprintf(fptrForAnnounce, "    <div class=\"sender-name\">%s</div>\n", user);
             fprintf(fptrForAnnounce, "    <div class=\"message-body\">%s</div>\n", announcement);
             fprintf(fptrForAnnounce, "    <div class=\"message-time\">%s</div>\n", buffer);
             fprintf(fptrForAnnounce, "</div>\n");
-            printf("Message Successfully Sent at : %s\n",buffer);
+            printf("Message Successfully Sent at : %s\n", buffer);
             fclose(fptrForAnnounce);
             break;
         case 2:

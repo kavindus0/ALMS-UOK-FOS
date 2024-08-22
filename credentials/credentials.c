@@ -8,11 +8,6 @@
 
 #define FILENAME "users.txt"
 
-struct User {
-    char username[50];
-    char password[50];
-    char role[20];
-};
 
 void storeUser(struct User user) {
     FILE *file = fopen(FILENAME, "a");
@@ -62,7 +57,7 @@ void loginUser(struct User *user) {
             printf("\nWelcome to the Teacher's Portal.\n");
             printf("Welcome %s !\n", user->username);
             logTrackTrue(user->username);
-            TeachersThing();
+            TeachersThing(user);
             // Additional teacher-specific logic
         } else if (strcmp(user->role, "Student") == 0) {
             printf("\nWelcome to the Student's Portal.\n");

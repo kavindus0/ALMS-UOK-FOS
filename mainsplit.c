@@ -135,6 +135,35 @@ void EDUcomTchr(char *user) {
             break;
         case 2:
             printf("\nOpen Portal Logged\n");
+
+            printf("\nOpen Portal Logged\n");
+             printf("\nSchool Open Portal Logged\n");
+            printf("\nWrite And HIT ENTRE to Send a Notification to Announcement\n");
+            char announcement4Open[10000];
+            getchar(); // To consume the newline character left by previous scanf
+            fgets(announcement, sizeof(announcement), stdin);
+            FILE *fptrForOpen = fopen("./communication/OpenPortal/index.html", "a");
+            if (fptrForAnnounce == NULL) {
+                printf("Error opening file!\n");
+                return;
+            }
+            //time_t t;
+            //struct tm *tm_info;
+            time(&t);
+            tm_info = localtime(&t);
+
+            //char buffer[26];
+
+            strftime(buffer, 26, "%Y-%m-%d %H:%M:%S", tm_info);
+            // printf("Current Date and Time: %s\n", buffer);
+            fprintf(fptrForAnnounce, "<div class=\"message-bubble\">\n");
+            fprintf(fptrForAnnounce, "    <div class=\"sender-name\">%s</div>\n", user);
+            fprintf(fptrForAnnounce, "    <div class=\"message-body\">%s</div>\n", announcement);
+            fprintf(fptrForAnnounce, "    <div class=\"message-time\">%s</div>\n", buffer);
+            fprintf(fptrForAnnounce, "</div>\n");
+            printf("Message Successfully Sent at : %s\n", buffer);
+            fclose(fptrForAnnounce);
+            break;
             break;
         default:
             printf("\nInvalid input\n");
@@ -179,6 +208,32 @@ void EDUcomStaff(char *user) {
             break;
         case 2:
             printf("\nOpen Portal Logged\n");
+             printf("\nSchool Open Portal Logged\n");
+            printf("\nWrite And HIT ENTRE to Send a Notification to Announcement\n");
+            char announcement4Open[10000];
+            getchar(); // To consume the newline character left by previous scanf
+            fgets(announcement, sizeof(announcement), stdin);
+            FILE *fptrForOpen = fopen("./communication/OpenPortal/index.html", "a");
+            if (fptrForAnnounce == NULL) {
+                printf("Error opening file!\n");
+                return;
+            }
+            //time_t t;
+            //struct tm *tm_info;
+            time(&t);
+            tm_info = localtime(&t);
+
+            //char buffer[26];
+
+            strftime(buffer, 26, "%Y-%m-%d %H:%M:%S", tm_info);
+            // printf("Current Date and Time: %s\n", buffer);
+            fprintf(fptrForAnnounce, "<div class=\"message-bubble\">\n");
+            fprintf(fptrForAnnounce, "    <div class=\"sender-name\">%s</div>\n", user);
+            fprintf(fptrForAnnounce, "    <div class=\"message-body\">%s</div>\n", announcement);
+            fprintf(fptrForAnnounce, "    <div class=\"message-time\">%s</div>\n", buffer);
+            fprintf(fptrForAnnounce, "</div>\n");
+            printf("Message Successfully Sent at : %s\n", buffer);
+            fclose(fptrForAnnounce);
             break;
         default:
             printf("\nInvalid input\n");
@@ -199,7 +254,7 @@ void EDUcomStud(char *user) {
             char announcement[10000];
             getchar(); // To consume the newline character left by previous scanf
             fgets(announcement, sizeof(announcement), stdin);
-            FILE *fptrForAnnounce = fopen("./communication/SchoolAnnouncement/index.html", "a");
+            FILE *fptrForAnnounce = fopen("./communication/OpenPortal/index.html", "a");
             if (fptrForAnnounce == NULL) {
                 printf("Error opening file!\n");
                 return;
@@ -211,16 +266,13 @@ void EDUcomStud(char *user) {
             char buffer[26];
             strftime(buffer, 26, "%Y-%m-%d %H:%M:%S", tm_info);
             // printf("Current Date and Time: %s\n", buffer);
-            fprintf(fptrForAnnounce, "<div class=\"message-bubble-stu\">\n");
+            fprintf(fptrForAnnounce, "<div class=\"message-bubble\">\n");
             fprintf(fptrForAnnounce, "    <div class=\"sender-name\">%s</div>\n", user);
             fprintf(fptrForAnnounce, "    <div class=\"message-body\">%s</div>\n", announcement);
             fprintf(fptrForAnnounce, "    <div class=\"message-time\">%s</div>\n", buffer);
             fprintf(fptrForAnnounce, "</div>\n");
             printf("Message Successfully Sent at : %s\n", buffer);
             fclose(fptrForAnnounce);
-            break;
-        case 2:
-            printf("\nOpen Portal Logged\n");
             break;
         default:
             printf("\nInvalid input\n");

@@ -4,10 +4,15 @@
 #import <stdio.h>
 #import "./communication/Communication.c"
 
+struct User {
+    char username[50];
+    char password[50];
+    char role[20];
+};
 
-void TeachersThing(){
 
-    void EDUconnectCommunicationPortal();
+void TeachersThing(struct User *user) {
+
     void HR();
     void ExtraActivities();
     void TimeTable();
@@ -15,9 +20,9 @@ void TeachersThing(){
     int input;
     printf("\n1. EDUconnect Communication Portal\n2. HR\n3. Extra Activities\n4. Time Table\n\nEnter a number:");
     scanf("%d", &input);
-        switch (input) {
+    switch (input) {
         case 1:
-            EDUconnectCommunicationPortal();
+            EDUcom(*user);
             break;
         case 2:
             HR();
@@ -34,34 +39,12 @@ void TeachersThing(){
     }
 }
 
-void StudentsThing(){
+void StudentsThing() {
     printf("Student Thing");
 }
 
-void StaffThing(){
+void StaffThing() {
     printf("Staff Thing");
-}
-
-
-
-void EDUconnectCommunicationPortal() {
-    printf("\n---- EDUconnect Communication Portal -----\n");
-    printf("1.School Announcement\n");
-    printf("2.Open Portal\n");
-    printf("Enter a number and Hit ENTRE: ");
-    int input;
-    scanf("%d", &input);
-    switch (input) {
-        case 1:
-            printf("\nSchool Announcement Logged\n");
-            break;
-        case 2:
-            printf("\nOpen Portal Logged\n");
-            break;
-        default:
-            printf("\nInvalid input\n");
-            break;
-    }
 }
 
 void HR() {
@@ -74,4 +57,32 @@ void ExtraActivities() {
 
 void TimeTable() {
     printf("Time Table\n");
+}
+
+void EDUcom(struct User *user) {
+    struct User {
+        char username[50];
+        char password[50];
+        char role[20];
+    };
+    printf("\n---- EDUconnect Communication Portal -----\n");
+    printf("1.School Announcement\n");
+    printf("2.Open Portal\n");
+    printf("Enter a number and Hit ENTRE: ");
+    int input;
+    scanf("%d", &input);
+    switch (input) {
+        case 1:
+            printf("\nSchool Announcement Logged\n");
+            printf("\nSend a Notification to Announcement\n");
+            printf("%s hiii",user->username);
+
+            break;
+        case 2:
+            printf("\nOpen Portal Logged\n");
+            break;
+        default:
+            printf("\nInvalid input\n");
+            break;
+    }
 }

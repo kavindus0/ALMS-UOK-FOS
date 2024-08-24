@@ -11,9 +11,7 @@ struct User {
 };
 
 void TeachersThing(char *user);
-
-void StudentsThing();
-
+void StudentsThing(char *user);
 void StaffThing(char *user);
 
 void HR();
@@ -51,7 +49,7 @@ void TeachersThing(char *user) {
 }
 
 
-void StudentsThing() {
+void StudentsThing(char *user) {
     printf("Student Thing\n");
 }
 

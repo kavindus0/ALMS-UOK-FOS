@@ -49,9 +49,9 @@ void TeachersThing(char *user) {
 }
 
 
-void StudentsThing(char *user) {
-    printf("Student Thing\n");
-}
+//void StudentsThing(char *user) {
+//    printf("Student Thing\n");
+//}
 
 void StaffThing(char *user) {
     printf("Staff Thing\n");

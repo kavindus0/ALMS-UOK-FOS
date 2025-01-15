@@ -19,3 +19,4 @@ s s StaffMember
 sumudumal sa Teacher
 aa juu Teacher
 ss ssss StaffMember
+kavindus 20000 Teacher

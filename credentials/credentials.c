@@ -63,7 +63,7 @@ void loginUser(struct User *user) {
             printf("\nWelcome to the Student's Portal.\n");
             printf("Welcome %s !\n", user->username);
             logTrackTrue(user->username);
-            StudentsThing();
+            //StudentsThing();
             // Additional student-specific logic
         } else if (strcmp(user->role, "StaffMember") == 0) {
             printf("\nWelcome to the Staff Member's Portal.\n");

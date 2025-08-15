@@ -86,7 +86,7 @@ The system was developed using the C programming language, focusing on efficienc
 
 ## License
 
-This project is licensed under the MIT License(LICENSE).
+This project is licensed under the MIT LICENSE.
 
 ## Acknowledgements
 
